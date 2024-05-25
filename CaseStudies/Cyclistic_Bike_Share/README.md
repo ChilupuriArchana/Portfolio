@@ -251,3 +251,481 @@ GROUP BY member_casual;
 
 It is evident from the data that the majority of individuals are Annual-members, representing 64.64% of the overall riders. In contrast, Casual-riders constitute the remaining 35.36%.
 
+### 2.Bike usage of member Vs Casual
+
+
+This section will examine potential patterns between riders and the types of bikes they use.
+
+
+
+
+#### The SQL query that is used for this is as follows:
+
+
+
+
+```
+SELECT
+   COUNT(ride_id) AS no_if_riders,
+   rideable_type,
+   member_casual
+FROM dbo.[cyclistic_bike]
+GROUP BY
+   rideable_type,
+   member_casual
+;
+```
+
+
+
+
+
+
+#### Corresponding dashboard:
+
+
+
+
+
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Cyclistic_Bike_Share/images/2.png?raw=true)
+
+
+
+
+
+
+
+
+#### Observation
+
+
+Our empirical observations reveal a significant preference for both classic and electric bicycles among casual and member riders. Classic bicycles, however, appear to be the most popular choice. Notably, the utilization of docked bicycles seems to be exclusive to casual riders.
+
+
+
+
+### 3.Start-time month analysis by casual and member
+
+
+This section will explore possible correlations between riders and the month of their start time.
+
+
+
+
+#### The SQL query that is used for this is as follows:
+
+
+
+
+```
+SELECT
+   COUNT(ride_id) AS no_of_users,
+   DATENAME(month,started_at) AS Started_month,
+   member_casual
+FROM dbo.[cyclistic_bike]
+GROUP BY
+   DATENAME(month,started_at),
+   member_casual
+;
+```
+
+
+
+
+
+
+#### Corresponding dashboard:
+
+
+
+
+
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Cyclistic_Bike_Share/images/3.png?raw=true)
+
+
+
+
+
+
+
+
+#### Observation
+
+
+The dashboards illustrate an increase in the number of rides during the second and third quarters.
+
+
+
+
+### 4.End-time month analysis by casual and member
+
+
+This section will explore possible correlations between riders and the month of their end time.
+
+
+
+
+#### The SQL query that is used for this is as follows:
+
+
+
+
+```
+SELECT
+   COUNT(ride_id) AS no_of_users,
+   DATENAME(month,ended_at) AS ended_month,
+   member_casual
+FROM dbo.[cyclistic_bike]
+GROUP BY
+   DATENAME(month,ended_at),
+   member_casual
+;
+```
+
+
+
+
+
+
+#### Corresponding dashboard:
+
+
+
+
+
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Cyclistic_Bike_Share/images/4.png?raw=true)
+
+
+
+
+
+
+
+
+#### Observation
+
+
+The dashboards illustrate an increase in the number of rides during the second and third quarters.
+
+
+
+
+### 5.Start-time Week day analysis by casual and member
+
+
+This section will explore possible correlations between riders and the week-day of their start time.
+
+
+
+
+#### The SQL query that is used for this is as follows:
+
+
+
+
+```
+SELECT
+  COUNT(ride_id) AS no_of_users,
+  DATENAME(weekday, started_at) AS started_day,
+  member_casual
+FROM dbo.[cyclistic_bike]
+GROUP BY DATENAME(weekday, started_at),member_casual
+;
+```
+
+
+
+
+
+
+#### Corresponding dashboard:
+
+
+
+
+
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Cyclistic_Bike_Share/images/5.png?raw=true)
+
+
+
+
+
+
+
+
+#### Observation
+
+
+The dashboards provide a clear representation of the data. It can be inferred that casual riders primarily utilize the service during weekends, while annual members consistently use the service throughout the week, with a slight decrease in usage during weekdays.
+
+
+
+
+### 6.Ended time day analysis by casual and member
+
+
+This section will explore possible correlations between riders and the week-day of their end time.
+
+
+
+
+#### The SQL query that is used for this is as follows:
+
+
+
+
+```
+SELECT
+  COUNT(ride_id) AS no_of_users,
+  DATENAME(weekday, ended_at) AS ended_day,
+  member_casual
+FROM dbo.[cyclistic_bike]
+GROUP BY DATENAME(weekday, ended_at),member_casual
+;
+```
+
+
+
+
+
+
+#### Corresponding dashboard:
+
+
+
+
+
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Cyclistic_Bike_Share/images/6.png?raw=true)
+
+
+
+
+
+
+
+
+#### Observation
+
+
+The dashboards provide a clear representation of the data. It can be inferred that casual riders primarily utilize the service during weekends, while annual members consistently use the service throughout the week, with a slight decrease in usage during weekdays.
+
+
+
+
+### 7.Start-time hour analysis by casual and member
+
+
+This section will explore possible correlations between riders and the hour of their start time.
+
+
+
+
+#### The SQL query that is used for this is as follows:
+
+
+
+
+```
+SELECT
+   COUNT(ride_id) AS no_of_users,
+   DATEPART(HOUR,started_at) AS Started_hour,
+   member_casual
+FROM dbo.[cyclistic_bike]
+GROUP BY
+   DATEPART(HOUR,started_at),
+   member_casual
+;
+```
+
+
+
+
+
+
+#### Corresponding dashboard:
+
+
+
+
+
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Cyclistic_Bike_Share/images/7.png?raw=true)
+
+
+
+
+
+
+
+#### Observation
+
+
+It can be deduced that both casual riders and annual members engage in more rides during evenings, whereas annual members have a marginally higher number of rides in the mornings.
+
+
+
+
+### 8.End-time hour analysis by casual and member
+
+
+This section will explore possible correlations between riders and the hour of their start time.
+
+
+
+
+#### The SQL query that is used for this is as follows:
+
+
+
+
+```
+SELECT
+   COUNT(ride_id) AS no_of_users,
+   DATEPART(HOUR,ended_at) AS Ended_hour,
+   member_casual
+FROM dbo.[cyclistic_bike]
+GROUP BY
+   DATEPART(HOUR,ended_at),
+   member_casual
+;
+```
+
+
+
+
+
+
+#### Corresponding dashboard:
+
+
+
+
+
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Cyclistic_Bike_Share/images/8.png?raw=true)
+
+
+
+
+
+
+
+#### Observation
+
+
+It can be deduced that both casual riders and annual members engage in more rides during evenings, whereas annual members have a marginally higher number of rides in the mornings.
+
+
+
+
+### 9.Day wise analysis by casual and member
+
+
+This section will explore possible correlations between riders and the day of their start time.
+
+
+
+
+#### The SQL query that is used for this is as follows:
+
+
+
+
+```
+SELECT
+   COUNT(ride_id) AS no_of_users,
+   DATENAME(day,started_at) AS Started_day,
+   member_casual
+FROM dbo.[cyclistic_bike]
+GROUP BY
+   DATENAME(day,started_at),
+   member_casual
+;
+```
+
+
+
+
+
+
+#### Corresponding dashboard:
+
+
+
+
+###
+
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Cyclistic_Bike_Share/images/9.png?raw=true)
+
+
+
+
+
+
+
+
+#### Observation
+
+
+Rides are uniform across all days for both casual-riders and annual-members.
+
+
+
+
+### 10.Analysis of ride length
+
+
+This section will explore possible correlations between riders and the length of the ride.
+
+
+
+
+#### The SQL query that is used for this is as follows:
+
+
+
+
+```
+SELECT
+   COUNT(*) AS rides,
+   member_casual,
+   IIF(CEILING(DATEDIFF(SECOND, started_at, ended_at) / 3600.0) < 24     ,CAST(CEILING(DATEDIFF(SECOND, started_at, ended_at) / 3600.0)  AS   VARCHAR), '24+') AS hours_diff
+FROM dbo.[cyclistic_bike]
+GROUP BY
+   member_casual,
+   IIF(CEILING(DATEDIFF(SECOND, started_at, ended_at) / 3600.0) < 24 , CAST(CEILING(DATEDIFF(SECOND, started_at, ended_at) / 3600.0)  AS VARCHAR), '24+')
+```
+
+
+
+
+
+
+#### Corresponding dashboard:
+
+
+
+
+
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Cyclistic_Bike_Share/images/10.png?raw=true)
+
+
+
+
+
+
+
+
+#### Observation
+
+
+The majority of rides are less than one hour in duration for both casual riders and annual members.
+
+
