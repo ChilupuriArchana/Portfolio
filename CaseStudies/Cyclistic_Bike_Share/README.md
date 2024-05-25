@@ -195,3 +195,59 @@ INNER JOIN DUPLICATE_COUNT AS D
 
 ;
 ```
+
+## Analyze
+
+
+Having completed the preparation and processing of the data, we can now proceed with the analysis phase. The objective of this phase is to identify patterns and extract valuable insights from the data.
+
+
+
+
+### **1.Comparison between Casual-riders and Annual-members**
+
+
+In this, we are in the process of identifying the number of Casual-riders and Annual-members.
+
+
+
+
+#### The SQL query that is used for this is as follows:
+
+
+
+
+```
+SELECT
+   COUNT(ride_id) AS no_of_riders,
+   member_casual
+FROM dbo.[cyclistic_bike]
+GROUP BY member_casual;
+```
+
+
+
+
+
+
+#### Corresponding dashboard:
+
+
+
+
+
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Cyclistic_Bike_Share/images/1.png?raw=true)
+
+
+
+
+
+
+
+
+#### Observation
+
+
+It is evident from the data that the majority of individuals are Annual-members, representing 64.64% of the overall riders. In contrast, Casual-riders constitute the remaining 35.36%.
+
