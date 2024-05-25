@@ -729,3 +729,15 @@ GROUP BY
 The majority of rides are less than one hour in duration for both casual riders and annual members.
 
 
+## Share
+
+   Tableau Link for the dashboard generated. [Bike Share Case Study Tableau Link](https://public.tableau.com/views/Bike\_Share\_Case\_Study\_17166630021030/Bike\_Share\_Case\_Study?:language=en-US&:sid=&:display\_count=n&:origin=viz\_share\_link)
+
+
+## Act
+
+*   The weekend rental prices for casual-riders can be increased, providing an incentive for them to convert to annual-members.
+*   Electric bikes are becoming increasingly popular among both casual and member riders. Therefore, consider introducing a price reduction under the membership subscription for electric bikes.
+*   During peak times, such as weekends, increase the pricing for a single ride or a full day pass. Additionally, introduce priority access for members during peak times for casual riders.
+
+
