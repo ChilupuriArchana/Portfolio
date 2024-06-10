@@ -58,3 +58,119 @@ GROUP BY Genre;
 #### Observation
 
 It is evident from the data that the majority are non fiction books.
+
+### **2.Fiction and NonFiction YoY**
+
+
+### This section will examine fiction and non-fiction books year over year.
+
+
+### The SQL query that is used for this is as follows:
+
+
+```
+SELECT Year,Genre,COUNT(Genre) as count
+FROM bestsellers
+GROUP By Year,Genre;
+
+```
+
+
+
+#### Corresponding dashboard:
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Amazon_Top_50_Best_Selling_Books/images/2.png?raw=true)
+
+
+
+#### Observation
+
+Our empirical observations reveal a significant preference for non fiction books compared to fiction books.We can observe that from 2009 to 2010 there is decrease in fiction books then in 2014 increased after that decreased.We can observe that from 2009 to 2010 there is increase in non-fiction books then in 2014 decreased after that increased.
+
+
+### 3.Top 10 authors with the highest number of selling books
+
+This section will explore the top 10 authors with the highest number of selling books
+
+
+#### The SQL query that is used for this is as follows:
+
+
+```
+SELECT Author,COUNT(Name) as 'Number of Best Selling Books'
+FROM bestsellers
+GROUP BY Author
+ORDER BY count(Name) desc
+OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY;
+```
+
+
+
+#### Corresponding dashboard:
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Amazon_Top_50_Best_Selling_Books/images/3.png?raw=true)
+
+
+#### Observation
+
+The dashboards illustrate the famous authors.
+
+
+### 4.The total number of reviews in YoY.
+
+
+### This section will explore the total number of reviews year over year for fiction and non-fiction books..
+
+
+#### The SQL query that is used for this is as follows:
+
+
+```
+SELECT Year,Genre,SUM(Reviews) as total_number_of_reviews
+FROM bestsellers
+GROUP BY Year,Genre
+ORDER BY Genre,SUM(Reviews) DESC
+
+```
+
+
+
+#### Corresponding dashboard:
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Amazon_Top_50_Best_Selling_Books/images/4.png?raw=true)
+
+
+
+#### Observation
+
+The dashboards illustrate that fiction books have more reviews compared to non-fiction books.
+
+
+### 5.Average user rating of fiction and nonfiction books YoY
+
+This section will explore the average rating of fiction and non-fiction books year over year
+
+The SQL query that is used for this is as follows:
+
+
+```
+SELECT Year,Genre,ROUND(AVG(User_Rating),2) as total_user_rating
+FROM bestsellers
+GROUP BY Year,Genre
+ORDER BY Genre,total_user_rating 
+
+```
+
+
+
+#### Corresponding dashboard:
+
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Amazon_Top_50_Best_Selling_Books/images/5.png?raw=true)
+
+
+
+#### Observation
+
+The dashboards provide a clear representation of the data. It can be inferred that ratings for fiction are more compared to non fiction.
+
+
