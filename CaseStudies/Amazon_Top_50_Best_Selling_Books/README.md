@@ -31,3 +31,30 @@ Data Source: Historical Amazon bestseller data containing information like:
 
 During this stage, the focus is on data cleansing and preparation. Within this phase, the following steps were undertaken:
 
+## Analyze
+
+Having completed the preparation and processing of the data, we can now proceed with the analysis phase. The objective of this phase is to identify patterns and extract valuable insights from the data.
+
+
+### **1.Comparison between Fiction and NonFiction**
+
+In this, we are in the process of identifying the number of Fiction and NonFiction.. 
+
+
+#### The SQL query that is used for this is as follows:
+
+
+```
+SELECT Genre, COUNT(Genre) as count
+FROM bestsellers
+GROUP BY Genre;
+```
+
+
+
+#### Corresponding dashboard:
+![Chart](https://github.com/ChilupuriArchana/Portfolio/blob/main/CaseStudies/Amazon_Top_50_Best_Selling_Books/images/1.png?raw=true)
+
+#### Observation
+
+It is evident from the data that the majority are non fiction books.
